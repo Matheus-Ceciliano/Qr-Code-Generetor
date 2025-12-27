@@ -12,7 +12,7 @@
 	justify-content: center;
 	flex-direction: column;
 	min-height: 100vh;
-	background: linear-gradient(180deg, #DBEAFE, #ADD0FF);
+	background: linear-gradient(180deg, #212121, #323232);
 	gap: 32px;
 
 
@@ -25,11 +25,12 @@
 .page-title {
 	font-weight: 600;
 	text-align: center;
+	color: white;
 	font-size: 32px;
 }
 
 span {
-	color: #4f46e5
+	color: #0D7377
 }
 
 .arrow-detail {
@@ -42,7 +43,7 @@ span {
 }
 
 .qr-code-container {
-	background-color: #f8fafc;
+	background-color: #547792;
 	padding: 12px;
 	border-radius: 12px;
 	display: flex;
@@ -52,7 +53,7 @@ span {
 
 	.qr-code,
 	.qr-code-customization {
-		background-color: #ffffff;
+		background-color: #b0c6cf;
 		padding: 18px;
 		border-radius: 12px;
 		width: 50%;
@@ -131,10 +132,11 @@ span {
 			height: 47px;
 			cursor: pointer;
 		}
-		.input-file-button{
+
+		.input-file-button {
 			position: relative;
 			z-index: 1;
-			background-color: #4f46e5;
+			background-color: #0D7377;
 			border-radius: 8px;
 			border: none;
 			padding: 8px;
@@ -147,7 +149,7 @@ span {
 			width: fit-content;
 		}
 
-		#logo-size{
+		#logo-size {
 			background-color: #f8fafc;
 			border: 1px solid #e2e8f0;
 			padding: 8px 12px;
@@ -157,9 +159,9 @@ span {
 			background-position: right 12px center;
 			background-repeat: no-repeat;
 			background-size: 18px;
-			
-			&:focus{
-				outline: 1px solid #4f46e5;
+
+			&:focus {
+				outline: 1px solid #0D7377;
 			}
 		}
 	}
@@ -178,8 +180,8 @@ span {
 	}
 }
 
-.download-button{
-	background-color: #4f46e5;
+.download-button {
+	background-color: #0D7377;
 	color: #ffffff;
 	padding: 12px 24px;
 	border-radius: 8px;
@@ -188,33 +190,37 @@ span {
 	cursor: pointer;
 	width: 100%;
 	transition: background-color 0.2s;
-	
-	&:hover{
-		background-color: #4338ca;
+
+	&:hover {
+		background-color: #105457;
 	}
 }
-@media screen and (max-width: 768px){
-	.container{
+
+@media screen and (max-width: 768px) {
+	.container {
 		padding: 32px 5%;
 		gap: 16px;
 	}
-	.title-container{
-		.arrow-detail{
+
+	.title-container {
+		.arrow-detail {
 			display: none;
 		}
 	}
-	.qr-code-container{
+
+	.qr-code-container {
 		flex-direction: column;
 		width: 100%;
 
-		.qr-code{
+		.qr-code {
 			width: 100%;
 		}
-		.qr-code-customization{
+
+		.qr-code-customization {
 			width: 100%;
 			gap: 12px;
 		}
 
 	}
-	
+
 }

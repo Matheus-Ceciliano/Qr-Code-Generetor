@@ -4,30 +4,30 @@ import { FaUpload } from "react-icons/fa";
 import React, { useRef, useState } from 'react';
 
 export default function Home() {
-	const[LinkValue, setLinkValue] = useState<string>('');
-	const[fgColor, setfgColor] = useState<string>('#000000');
-	const[bgColor, setbgColor] = useState<string>('#ffffff');
-	const[logoUrl, setlogoUrl] = useState<string>('https');
-	const[logoSize, setlogoSize] = useState<number>(38);
+	const [LinkValue, setLinkValue] = useState<string>('');
+	const [fgColor, setfgColor] = useState<string>('#000000');
+	const [bgColor, setbgColor] = useState<string>('#ffffff');
+	const [logoUrl, setlogoUrl] = useState<string>('https');
+	const [logoSize, setlogoSize] = useState<number>(38);
 	const qrCodeRef = useRef<HTMLDivElement>(null);
 
 
-	const handLogoChange = (e: React.ChangeEvent<HTMLInputElement>) =>{
+	const handLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const file = e.target.files?.[0];
 
-		if(file){
+		if (file) {
 			const reader = new FileReader();
 
-			reader.onload = () =>{
-				if (reader.result){
+			reader.onload = () => {
+				if (reader.result) {
 					setlogoUrl(reader.result as string);
 				}
 			}
 			reader.readAsDataURL(file);
 		}
 	}
-	
-	const handleDownload = () =>{
+
+	const handleDownload = () => {
 		if (!qrCodeRef.current) return;
 		const canvas = qrCodeRef.current.querySelector("canvas");
 
@@ -48,11 +48,7 @@ export default function Home() {
 					Qr codes <span>dinâmicos</span>
 				</h1>
 
-				<img
-					src="/arrow.svg"
-					alt="detail"
-					className="arrow-detail"
-				/>
+
 
 			</section >
 
@@ -67,7 +63,7 @@ export default function Home() {
 							id="link"
 							placeholder="Seu link aqui"
 							value={LinkValue}
-							onChange={(e)=> setLinkValue(e.target.value)}
+							onChange={(e) => setLinkValue(e.target.value)}
 						/>
 					</div>
 					<div className="qr-code-preview">
@@ -108,12 +104,12 @@ export default function Home() {
 							<label htmlFor="fgColor">
 								Cor principal
 							</label>
-							<input 
-								type="color" 
-								className='input-color' 
-								id="fgColor" 
+							<input
+								type="color"
+								className='input-color'
+								id="fgColor"
 								value={fgColor}
-								onChange={(e)=>setfgColor(e.target.value)}
+								onChange={(e) => setfgColor(e.target.value)}
 							/>
 
 						</div>
@@ -122,10 +118,10 @@ export default function Home() {
 							<label htmlFor="bgColor">
 								Cor do fundo
 							</label>
-							<input 
-								type="color" 
-								className='input-color' 
-								id="bgColor" 
+							<input
+								type="color"
+								className='input-color'
+								id="bgColor"
 								value={bgColor}
 								onChange={(e) => setbgColor(e.target.value)}
 							/>
@@ -137,9 +133,9 @@ export default function Home() {
 
 
 					<div className='customization-container'>
-							<h3>
-								Logo
-							</h3>
+						<h3>
+							Logo
+						</h3>
 						<div className='input-container'>
 
 							<div className='input-box'>
@@ -171,13 +167,13 @@ export default function Home() {
 									id="logo-size"
 									value={logoSize}
 									onChange={(e) => setlogoSize(Number(e.target.value))}
-									
-									>
+
+								>
 									<option value="24">24px x 24px</option>
 									<option value="38">38px x 38px</option>
 									<option value="50">50px x 50px</option>
 									<option value="80">80px x 80px</option>
-									
+
 
 								</select>
 
